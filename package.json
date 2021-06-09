@@ -1,0 +1,25 @@
+{
+    "name": "dbml-syntax",
+    "displayName": "dbml syntax",
+    "description": "A syntax higlight and code snippet for dbml",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.56.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "dbml",
+            "aliases": ["dbml", "dbml"],
+            "extensions": [".dbml"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "dbml",
+            "scopeName": "source.dbml",
+            "path": "./syntaxes/dbml.tmLanguage.json"
+        }]
+    }
+}
