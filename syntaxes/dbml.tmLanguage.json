@@ -19,10 +19,10 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.dbml",
-				"match": "\\b(if|while|for|return)\\b"
+				"match": "\\b(Table|Ref|Project|enum|TableGroup)\\b"
 			}]
 		}
 	},
-	
+
 	"scopeName": "source.dbml"
 }
