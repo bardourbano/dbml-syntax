@@ -19,7 +19,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.dbml",
-				"match": "\\b(Table|Ref|Project|enum|TableGroup)\\b"
+				"match": "(?i)\\b(Table|Ref|Project|enum|TableGroup)\\b"
 			}]
 		}
 	},
