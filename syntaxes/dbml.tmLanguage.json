@@ -1,28 +1,48 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "dbml",
-	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#comments"
-		}
-	],
-	"repository": {
-		"comments": {
-			"patterns": [{
-				"name": "comment.line.double-slash.dbml",
-				"match": "\/\/.*"
-			}]
-		},
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.dbml",
-				"match": "(?i)\\b(Table|Ref|Project|enum|TableGroup)\\b"
-			}]
-		}
-	},
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "dbml",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#statements"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [{
+                "name": "comment.line.double-slash.dbml",
+                "match": "\/\/.*"
+            }]
+        },
+        "statements": {
+            "patterns": [
+                {
+                    "include": "#project-definition"
+                }
+            ]
+        },
+        "project-definition": {
+            "patterns": [{
+                "name": "meta.project.dbml",
+                "begin": "(?i)(project)",
+                "end": "(})",
+                "beginCaptures": {
+                    "1":{ "name": "storage.type.project.dbml" }
+                },
+                "patterns": [{
+                    "include": "#definition-name"
+                }]
+            }]
+        },
+        "definition-name": {
+            "patterns": [{
+                "name": "entity.name.class.dbml",
+                "match": "\\b([:alnum:_]\\S*)\\b"
+            }]
+        }
+    },
 
-	"scopeName": "source.dbml"
+    "scopeName": "source.dbml"
 }
