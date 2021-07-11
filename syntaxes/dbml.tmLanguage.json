@@ -31,9 +31,14 @@
                 "beginCaptures": {
                     "1":{ "name": "storage.type.project.dbml" }
                 },
-                "patterns": [{
-                    "include": "#definition-name"
-                }]
+                "patterns": [
+                    {
+                        "include": "#definition-name"
+                    },
+                    {
+                        "include": "#definition-attributes"
+                    }
+                ]
             }]
         },
         "definition-name": {
@@ -41,6 +46,20 @@
                 "name": "entity.name.class.dbml",
                 "match": "\\b([:alnum:_]\\S*)\\b"
             }]
+        },
+        "definition-attributes": {
+            "patterns": [
+                {
+                    "include": "#database-type"
+                },
+                {
+                    "include": "#note"
+                }
+            ]
+        },
+        "database-type": {
+            "name": "storage.type.database-type.dbml",
+            "match": "(?i)(database_type:)"
         }
     },
 
