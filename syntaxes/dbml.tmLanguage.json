@@ -60,6 +60,10 @@
         "database-type": {
             "name": "storage.type.database-type.dbml",
             "match": "(?i)(database_type:)"
+        },
+        "note": {
+            "name": "storage.type.note.dbml",
+            "match": "(?i)(note:)"
         }
     },
 
